@@ -1,0 +1,62 @@
+﻿<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">
+            <span class="title-name">Clay Gomera</span>
+        </a>
+        <button class="navbar-toggler @NavButtonCssClass" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-label="Toggle navigation" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse @NavBarCssClass" id="navbarCollapse" @onclick="ToggleNavMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item px-1">
+                    <NavLink class="nav-link d-flex menu-element" href="#about">
+                        <i class="fa-solid fa-address-card me-2"></i>
+                        <span>About Me</span>
+                    </NavLink>
+                </li>
+                <li class="nav-item px-1">
+                    <NavLink class="nav-link d-flex menu-element" href="#education">
+                        <i class="fa-solid fa-graduation-cap me-2"></i>
+                        <span>Education</span>
+                    </NavLink>
+                </li>
+                <li class="nav-item px-1">
+                    <NavLink class="nav-link d-flex menu-element" href="#projects">
+                        <i class="fa-solid fa-list-check me-2"></i>
+                        <span>Projects</span>
+                    </NavLink>
+                </li>
+                <li class="nav-item px-1">
+                    <NavLink class="nav-link d-flex menu-element" href="#experience">
+                        <i class="fa-solid fa-briefcase me-2"></i>
+                        <span>Experience</span>
+                    </NavLink>
+                </li>
+                <li class="nav-item px-1">
+                    <NavLink class="nav-link d-flex menu-element" href="#skills">
+                        <i class="fa-solid fa-hammer me-2"></i>
+                        <span>Skills</span>
+                    </NavLink>
+                </li>
+                <li class="nav-item px-1">
+                    <NavLink class="nav-link d-flex menu-element" href="#interests">
+                        <i class="fa-solid fa-heart me-2"></i>
+                        <span>Interests</span>
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@code {
+    private bool collapseNavMenu = true;
+    private string? NavBarCssClass => collapseNavMenu ? null : "show";
+    private string? NavButtonCssClass => collapseNavMenu ? "collapsed" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
